@@ -1,3 +1,5 @@
+package poo;
+
 // Clase base Auto
 public class Auto {
   private int numeroDeRuedas;
@@ -65,61 +67,18 @@ public class Auto {
     System.out.println("El auto está acelerando.");
   }
 
-  public void llenarCombustible() {
-    System.out.println("El auto está llenando combustible.");
+  @Override
+  public void llenarCombustible(Gasolina gasolina) {
+    System.out.println("Se llena el auto con gasolina");
+ 
+  @Override
+  public void llenarCombustible(Electrico electrico) {
+    System.out.println("Se llena el auto con electricidad");
+  }
+
+  @Override
+  public void llenarCombustible(Diesel diesel) {
+    System.out.println("Se llena el auto con Diesel");
   }
 }
 
-// Subclase AutoDeportivo
-class AutoDeportivo extends Auto {
-  public AutoDeportivo(int numeroDeRuedas, String tipoDeCombustible, int velocidadMaxima, String color,
-      int numeroDePuertas) {
-    super(numeroDeRuedas, tipoDeCombustible, velocidadMaxima, color, numeroDePuertas);
-  }
-
-  @Override
-  public void acelerar() {
-    System.out.println("El auto deportivo está acelerando rápidamente.");
-  }
-}
-
-// Subclase AutoSedan
-class AutoSedan extends Auto {
-  public AutoSedan(int numeroDeRuedas, String tipoDeCombustible, int velocidadMaxima, String color,
-      int numeroDePuertas) {
-    super(numeroDeRuedas, tipoDeCombustible, velocidadMaxima, color, numeroDePuertas);
-  }
-
-  @Override
-  public void acelerar() {
-    System.out.println("El auto sedán está acelerando suavemente.");
-  }
-
-  @Override
-  public void llenarCombustible(Combustible Gasolina) {
-
-  }
-
-  @Override
-  public void llenarCombustible(Combustible Electrico) {
-
-  }
-
-  @Override
-  public void llenarCombustible(Combustible Diesel) {
-
-  }
-}
-
-// Subclase AutoFamiliar
-class AutoFamiliar extends Auto {
-  public AutoFamiliar(int numeroDeRuedas, String tipoDeCombustible, int velocidadMaxima, String color,
-      int numeroDePuertas) {
-    super(numeroDeRuedas, tipoDeCombustible, velocidadMaxima, color, numeroDePuertas);
-  }
-
-  @Override
-  public void acelerar() {
-    System.out.println("El auto familiar está acelerando con seguridad.");
-  }
-}
